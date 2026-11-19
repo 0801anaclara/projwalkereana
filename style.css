@@ -1,0 +1,393 @@
+
+/* ========================================
+   SISTEMA DE CADASTROS - SCHWARTZ DEV'S
+   Tema: Preto, Cinza e Branco
+======================================== */
+
+:root {
+    --black: #171717;
+    --dark: #252525;
+    --gray-dark: #444444;
+    --gray: #777777;
+    --gray-light: #e5e5e5;
+    --background: #f4f4f4;
+    --white: #ffffff;
+
+    --border: #dedede;
+    --shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    --radius: 10px;
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--black);
+    min-height: 100vh;
+    padding: 45px 20px;
+}
+
+/* CONTAINER */
+
+.container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* CABEÇALHO */
+
+.page-header {
+    margin-bottom: 40px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gray);
+    margin-bottom: 12px;
+}
+
+.page-header h1 {
+    font-size: clamp(30px, 5vw, 42px);
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+.page-header h1 span {
+    color: var(--gray);
+}
+
+.page-header p {
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* GRADE DOS FORMULÁRIOS */
+
+.forms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    margin-bottom: 45px;
+}
+
+/* CARTÕES */
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 27px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* CABEÇALHO DOS CARTÕES */
+
+.card-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 22px;
+    margin-bottom: 23px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    background: var(--black);
+    color: var(--white);
+
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.card-heading h2 {
+    font-size: 17px;
+    font-weight: 650;
+    color: var(--black);
+    margin-bottom: 5px;
+}
+
+.card-heading p {
+    color: var(--gray);
+    font-size: 12px;
+}
+
+/* FORMULÁRIOS */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-size: 12px;
+    font-weight: 650;
+    color: var(--gray-dark);
+    margin-bottom: 8px;
+}
+
+form input {
+    width: 100%;
+    height: 45px;
+    padding: 0 13px;
+    margin-bottom: 19px;
+
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--black);
+
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+form input::placeholder {
+    color: #a0a0a0;
+}
+
+form input:focus {
+    background: var(--white);
+    border-color: var(--gray-dark);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+}
+
+/* BOTÕES */
+
+form button {
+    width: 100%;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 16px;
+
+    background: var(--black);
+    color: var(--white);
+
+    border: 1px solid var(--black);
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 650;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+form button:hover {
+    background: var(--gray-dark);
+    border-color: var(--gray-dark);
+}
+
+form button span {
+    font-size: 19px;
+    transition: transform 0.2s ease;
+}
+
+form button:hover span {
+    transform: translateX(4px);
+}
+
+/* SEÇÃO DE REGISTROS */
+
+.records-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+}
+
+.records-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-bottom: 23px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.records-header h2 {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--black);
+}
+
+.record-count {
+    padding: 8px 13px;
+    background: #eeeeee;
+    color: var(--gray-dark);
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 650;
+    white-space: nowrap;
+}
+
+/* GRUPOS DE REGISTROS */
+
+.record-groups {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.record-group h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--black);
+
+    padding-bottom: 13px;
+    margin-bottom: 15px;
+
+    border-bottom: 2px solid var(--black);
+}
+
+.record-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.empty {
+    padding: 18px 12px;
+    background: #f7f7f7;
+    border: 1px dashed #d5d5d5;
+    border-radius: 6px;
+
+    text-align: center;
+    color: var(--gray);
+    font-size: 12px;
+}
+
+/* NOTIFICAÇÕES */
+
+.toast {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    padding: 15px 22px;
+
+    background: var(--black);
+    color: var(--white);
+
+    border-radius: 7px;
+    font-size: 13px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RODAPÉ */
+
+footer {
+    padding: 28px 10px 10px;
+    text-align: center;
+
+    color: var(--gray);
+    font-size: 12px;
+}
+
+footer span {
+    padding: 0 5px;
+    color: var(--black);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 950px) {
+    .forms-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .record-groups {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 25px 14px;
+    }
+
+    .forms-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card {
+        padding: 22px;
+    }
+
+    .records-section {
+        padding: 20px;
+    }
+
+    .records-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .records-header h2 {
+        font-size: 19px;
+    }
+
+    .page-header {
+        margin-bottom: 28px;
+    }
+
+    .toast {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        text-align: center;
+    }
+}
