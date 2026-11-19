@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Cadastros</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <span class="eyebrow">PAINEL ADMINISTRATIVO SCHWARTZ DEV'S</span>
+      <h1>Sistema de <span>Cadastros</span></h1>
+      <p>Gerencie clientes, consultores e projetos em um só lugar.</p>
+    </header>
+
+    <section class="forms-grid" aria-label="Formulários de cadastro">
+      <article class="card">
+        <div class="card-heading">
+          <div class="icon">01</div>
+          <div><h2>Cadastro de Cliente</h2><p>Registre um novo cliente</p></div>
+        </div>
+        <form id="clientForm">
+          <label for="clientName">Nome</label>
+          <input id="clientName" name="name" type="text" placeholder="Nome completo" required maxlength="100">
+          <label for="clientAddress">Endereço</label>
+          <input id="clientAddress" name="address" type="text" placeholder="Rua, número, cidade" required maxlength="160">
+          <button type="submit">Cadastrar cliente <span>→</span></button>
+        </form>
+      </article>
+
+      <article class="card">
+        <div class="card-heading">
+          <div class="icon">02</div>
+          <div><h2>Cadastro de Consultor</h2><p>Adicione um profissional</p></div>
+        </div>
+        <form id="consultantForm">
+          <label for="consultantName">Nome</label>
+          <input id="consultantName" name="name" type="text" placeholder="Nome completo" required maxlength="100">
+          <label for="consultantDocument">Documento</label>
+          <input id="consultantDocument" name="document" type="text" placeholder="CPF ou outro documento" required maxlength="30">
+          <label for="consultantSpecialty">Especialização</label>
+          <input id="consultantSpecialty" name="specialty" type="text" placeholder="Área de atuação" required maxlength="100">
+          <button type="submit">Cadastrar consultor <span>→</span></button>
+        </form>
+      </article>
+
+      <article class="card">
+        <div class="card-heading">
+          <div class="icon">03</div>
+          <div><h2>Cadastro de Projeto</h2><p>Crie um novo projeto</p></div>
+        </div>
+        <form id="projectForm">
+          <label for="projectStart">Data de início</label>
+          <input id="projectStart" name="start" type="date" required>
+          <label for="projectEnd">Data de término</label>
+          <input id="projectEnd" name="end" type="date" required>
+          <label for="projectValue">Valor (R$)</label>
+          <input id="projectValue" name="value" type="number" placeholder="0,00" min="0.01" step="0.01" required>
+          <button type="submit">Cadastrar projeto <span>→</span></button>
+        </form>
+      </article>
+    </section>
+
+    <section class="records-section">
+      <div class="records-header">
+        <div><span class="eyebrow">DADOS SALVOS</span><h2>Registros cadastrados</h2></div>
+        <span class="record-count" id="recordCount">0 registros</span>
+      </div>
+      <div class="record-groups">
+        <section class="record-group"><h3>Clientes</h3><div id="clientsList" class="record-list"><p class="empty">Nenhum cliente cadastrado.</p></div></section>
+        <section class="record-group"><h3>Consultores</h3><div id="consultantsList" class="record-list"><p class="empty">Nenhum consultor cadastrado.</p></div></section>
+        <section class="record-group"><h3>Projetos</h3><div id="projectsList" class="record-list"><p class="empty">Nenhum projeto cadastrado.</p></div></section>
+      </div>
+    </section>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <footer> Sistema de Cadastros <span>•</span> Dados armazenados neste navegador</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
